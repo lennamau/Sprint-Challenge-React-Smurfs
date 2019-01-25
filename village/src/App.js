@@ -57,6 +57,7 @@ class App extends Component {
             Update Smurfs
           </NavLink>
         </div>
+        
         <Route
           exact
           path="/"
@@ -65,6 +66,7 @@ class App extends Component {
           deleteSmurf ={this.deleteSmurf}
           />}
         />
+        
         <Route
           path="/smurf-form"
           render={props => (

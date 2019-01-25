@@ -5,9 +5,10 @@ import Smurf from './Smurf';
 class Smurfs extends Component {
   render() {
     return (
-      <div className="Smurfs">
-        <h1>Smurf Village</h1>
-        <ul>
+     <div>
+        <img className= "smurf-logo" src={require('./logo-smurfs.png')} alt="Smurf logo"/>
+        <div className="Smurfs--test">
+        <div className="Smurfs">
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
@@ -20,7 +21,8 @@ class Smurfs extends Component {
               />
             );
           })}
-        </ul>
+        </div>
+      </div>
       </div>
     );
   }
