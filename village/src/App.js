@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
@@ -28,14 +28,18 @@ class App extends Component {
         console.log(res.data);
         this.setState({ smurfs: res.data });
       })
-      .catch (err => {
-        console.log(err);
-      });            
+      .catch (err => 
+        console.log(err)
+      );            
   }
+  updateSmurfs = smurfs => {
+    this.setState({ smurfs })
+  }
+
   render() {
     return (
       <div className="App">
-        <SmurfForm />
+        <SmurfForm updateSmurfs={this.state.updateSmurfs} />
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
